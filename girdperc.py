@@ -36,15 +36,6 @@ n=read['Offer']
 num=n.nunique()
 p=n.unique()
 
-
-
-
-
-
-
-
-
-
 #of[13]="B1G2"
 #of[12]="B1G1"
 #of[11]="B2G3"
@@ -68,10 +59,7 @@ for i in range (0,len(of)):
     o[i]=read['Type of Offer']==of[i]
     base[i]=val
     val+=0.05
-    
    
-
-
 a=""
 
 df=pd.DataFrame(columns=('Sub-Category','MRP Range','Type','Category','0-5','B6G1','B5G1','B4G1','6-15','B4G2','B3G1','16-25','26-35','B2G1','>35','B2G3','B1G1','B1G2','mul','min','Category-type'))
@@ -137,20 +125,7 @@ for i in range(0,len(n1)):
         
         df.loc[count,'min']=min
         count+=1
-           
-
-        
-   
-
-
-
-
-
-
-
-
-
-
+          
 df.to_csv('grid1.csv',sep=',')
 reada=pd.read_csv('grid1.csv')
 
@@ -217,11 +192,6 @@ for i in range(0,len(reada)):
         reada.loc[i,'min']=min
         reada.loc[i,'Category-type']="Cat-Mrp"
           
-    
-   
-                  
-    
-    
 
 for i in range(0,len(reada)):
     mul=reada['mul'][i]
