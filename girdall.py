@@ -29,15 +29,6 @@ n=read['Offer']
 num=n.nunique()
 p=n.unique()
 
-
-
-
-
-
-
-
-
-
 of[8]="B1G2"
 of[7]="B1G1"
 of[6]="B2G3"
@@ -132,20 +123,7 @@ for i in range(0,len(n1)):
         
         df.loc[count,'min']=min
         count+=1
-           
-
-        
-   
-
-
-
-
-
-
-
-
-
-
+          
 df.to_csv('grid1.csv',sep=',')
 reada=pd.read_csv('grid1.csv')
 
@@ -211,20 +189,13 @@ for i in range(0,len(reada)):
         reada.loc[i,'mul']=mul
         reada.loc[i,'min']=min
         reada.loc[i,'Category-type']="Cat-Mrp"
-          
-    
-   
-                  
-    
-    
-
+         
 for i in range(0,len(reada)):
     mul=reada['mul'][i]
     min=reada['min'][i]
     subcat=reada['Sub-Category'][i]
     mrange=reada['MRP Range'][i]
     cat=reada['Category'][i]
-   
     
     if(mul==0.0):
         mins=reada[(reada['Category']==cat) & (reada['mul']>0.0)]['min'].sum()
@@ -246,8 +217,6 @@ for i in range(0,len(reada)):
     min=reada['min'][i]
     subcat=reada['Sub-Category'][i]
     mrange=reada['MRP Range'][i]
-    
-   
     
     if(mul==0.0):
         min=reada[(reada['MRP Range']==mrange) & (reada['mul']>0.0)]['min'].mean()
@@ -303,10 +272,7 @@ for i in range (0,len(reada)):
         for j3 in range(0,len(of)):
             reada.loc[i,of[j3]]=value
             value=value+d
-                
-                    
-       
-            
+          
 print(len(reada))
 
 reada.to_csv(fout,sep=',')
